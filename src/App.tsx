@@ -12,6 +12,8 @@ import ProductionDough from "./pages/ProductionDough";
 import ProductionBread from "./pages/ProductionBread";
 import POS from "./pages/POS";
 import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import StockTransfer from "./pages/StockTransfer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,8 +32,10 @@ const App = () => (
           <Route path="/production-bread" element={<ProductionBread />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/transfers" element={<StockTransfer />} />
           <Route path="/pos" element={<POS />} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

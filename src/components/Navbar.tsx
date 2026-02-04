@@ -6,12 +6,13 @@ import {
   UtensilsCrossed, 
   Package, 
   LayoutDashboard, 
-  ShoppingBasket, 
   ChefHat, 
   ShoppingCart, 
   BarChart3, 
   Warehouse,
-  Truck
+  Truck,
+  Settings,
+  ArrowRightLeft
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -25,8 +26,10 @@ const Navbar = () => {
     { path: '/production-dough', label: 'Dough Prep', icon: ChefHat },
     { path: '/production-bread', label: 'Bread Bake', icon: UtensilsCrossed },
     { path: '/inventory', label: 'Stock', icon: Package },
+    { path: '/transfers', label: 'Transfers', icon: ArrowRightLeft },
     { path: '/pos', label: 'POS / Sales', icon: ShoppingCart },
     { path: '/reports', label: 'Reports', icon: BarChart3 },
+    { path: '/settings', label: 'Settings', icon: Settings },
   ];
 
   return (
