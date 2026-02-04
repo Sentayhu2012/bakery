@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import { 
   Table, 
   TableBody, 
@@ -60,8 +60,8 @@ const BOM = () => {
   };
 
   return (
-    <div className="min-h-screen bg-orange-50/30">
-      <Navbar />
+    <div className="min-h-screen bg-orange-50/30 lg:pl-72">
+      <Sidebar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>

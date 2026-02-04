@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import StatCard from '@/components/StatCard';
 import { 
   TrendingUp, 
@@ -19,8 +19,8 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-orange-50/30">
-      <Navbar />
+    <div className="min-h-screen bg-orange-50/30 lg:pl-72">
+      <Sidebar />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
@@ -29,34 +29,42 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          <StatCard 
-            title="Total Sales" 
-            value="$1,284.50" 
-            icon={TrendingUp}
-            trend={{ value: "12%", isPositive: true }}
-            colorClass="bg-green-50 text-green-600"
-          />
-          <StatCard 
-            title="Raw Materials" 
-            value="42 Items" 
-            icon={Package}
-            description="6 items below threshold"
-            colorClass="bg-blue-50 text-blue-600"
-          />
-          <StatCard 
-            title="Low Stock Alerts" 
-            value="6" 
-            icon={AlertCircle}
-            description="Requires immediate attention"
-            colorClass="bg-red-50 text-red-600"
-          />
-          <StatCard 
-            title="Finished Goods" 
-            value="184 Units" 
-            icon={ShoppingBag}
-            description="Across 12 categories"
-            colorClass="bg-orange-50 text-orange-600"
-          />
+          <Link to="/reports" className="block">
+            <StatCard 
+              title="Total Sales" 
+              value="$1,284.50" 
+              icon={TrendingUp}
+              trend={{ value: "12%", isPositive: true }}
+              colorClass="bg-green-50 text-green-600"
+            />
+          </Link>
+          <Link to="/inventory" className="block">
+            <StatCard 
+              title="Raw Materials" 
+              value="42 Items" 
+              icon={Package}
+              description="6 items below threshold"
+              colorClass="bg-blue-50 text-blue-600"
+            />
+          </Link>
+          <Link to="/inventory" className="block">
+            <StatCard 
+              title="Low Stock Alerts" 
+              value="6" 
+              icon={AlertCircle}
+              description="Requires immediate attention"
+              colorClass="bg-red-50 text-red-600"
+            />
+          </Link>
+          <Link to="/products" className="block">
+            <StatCard 
+              title="Finished Goods" 
+              value="184 Units" 
+              icon={ShoppingBag}
+              description="Across 12 categories"
+              colorClass="bg-orange-50 text-orange-600"
+            />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -64,9 +72,11 @@ const Index = () => {
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-orange-100">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-gray-900">Recent Activity</h2>
-                <Button variant="ghost" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
-                  View All
-                </Button>
+                <Link to="/transactions">
+                  <Button variant="ghost" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
+                    View All
+                  </Button>
+                </Link>
               </div>
               <div className="space-y-4">
                 {[
@@ -99,7 +109,7 @@ const Index = () => {
                 <h3 className="text-xl font-bold mb-2">Quick Actions</h3>
                 <p className="text-orange-100 text-sm mb-6">Common tasks for your daily operations.</p>
                 <div className="space-y-3">
-                  <Link to="/production">
+                  <Link to="/production-bread">
                     <Button className="w-full bg-white/10 hover:bg-white/20 text-white border-none justify-between group mb-3">
                       <div className="flex items-center gap-2">
                         <ChefHat className="h-4 w-4" /> Log Daily Bakes
