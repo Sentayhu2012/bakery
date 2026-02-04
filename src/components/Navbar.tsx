@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { UtensilsCrossed, Package, LayoutDashboard, ShoppingBasket } from 'lucide-react';
+import { UtensilsCrossed, Package, LayoutDashboard, ShoppingBasket, BookOpen, ChefHat } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
@@ -11,6 +11,8 @@ const Navbar = () => {
   const navItems = [
     { path: '/', label: 'Dashboard', icon: LayoutDashboard },
     { path: '/inventory', label: 'Raw Materials', icon: Package },
+    { path: '/bom', label: 'BOM / Recipes', icon: BookOpen },
+    { path: '/production', label: 'Production', icon: ChefHat },
     { path: '/products', label: 'Finished Goods', icon: ShoppingBasket },
   ];
 
@@ -25,7 +27,7 @@ const Navbar = () => {
               </div>
               <span className="text-xl font-bold text-orange-900 tracking-tight">Crust & Crumb</span>
             </div>
-            <div className="hidden sm:ml-8 sm:flex sm:space-x-4">
+            <div className="hidden lg:ml-8 lg:flex lg:space-x-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = location.pathname === item.path;

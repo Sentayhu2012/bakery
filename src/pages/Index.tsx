@@ -9,7 +9,9 @@ import {
   AlertCircle, 
   ShoppingBag, 
   Clock,
-  ArrowRight
+  ArrowRight,
+  BookOpen,
+  ChefHat
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
@@ -68,9 +70,9 @@ const Index = () => {
               </div>
               <div className="space-y-4">
                 {[
-                  { action: "Stock Updated", item: "Sourdough Loaf", time: "10 mins ago", type: "product" },
+                  { action: "Production Logged", item: "24x Sourdough Loaf", time: "10 mins ago", type: "product" },
                   { action: "Low Stock Alert", item: "Unsalted Butter", time: "45 mins ago", type: "alert" },
-                  { action: "New Batch Added", item: "Chocolate Muffins", time: "2 hours ago", type: "product" },
+                  { action: "BOM Updated", item: "Chocolate Muffins", time: "2 hours ago", type: "inventory" },
                   { action: "Material Received", item: "All-Purpose Flour", time: "4 hours ago", type: "inventory" },
                 ].map((activity, i) => (
                   <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors">
@@ -97,14 +99,28 @@ const Index = () => {
                 <h3 className="text-xl font-bold mb-2">Quick Actions</h3>
                 <p className="text-orange-100 text-sm mb-6">Common tasks for your daily operations.</p>
                 <div className="space-y-3">
-                  <Link to="/inventory">
+                  <Link to="/production">
                     <Button className="w-full bg-white/10 hover:bg-white/20 text-white border-none justify-between group mb-3">
-                      Update Inventory <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <div className="flex items-center gap-2">
+                        <ChefHat className="h-4 w-4" /> Log Daily Bakes
+                      </div>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </Link>
-                  <Link to="/products">
+                  <Link to="/bom">
+                    <Button className="w-full bg-white/10 hover:bg-white/20 text-white border-none justify-between group mb-3">
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="h-4 w-4" /> Manage Recipes
+                      </div>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </Link>
+                  <Link to="/inventory">
                     <Button className="w-full bg-white/10 hover:bg-white/20 text-white border-none justify-between group">
-                      Log Daily Bakes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <div className="flex items-center gap-2">
+                        <Package className="h-4 w-4" /> Update Inventory
+                      </div>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </Link>
                 </div>
