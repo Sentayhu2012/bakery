@@ -6,8 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Inventory from "./pages/Inventory";
 import Products from "./pages/Products";
-import BOM from "./pages/BOM";
-import Production from "./pages/Production";
+import Warehouses from "./pages/Warehouses";
+import Purchasing from "./pages/Purchasing";
+import ProductionDough from "./pages/ProductionDough";
+import ProductionBread from "./pages/ProductionBread";
+import POS from "./pages/POS";
+import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,11 +24,14 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/warehouses" element={<Warehouses />} />
+          <Route path="/purchasing" element={<Purchasing />} />
+          <Route path="/production-dough" element={<ProductionDough />} />
+          <Route path="/production-bread" element={<ProductionBread />} />
           <Route path="/inventory" element={<Inventory />} />
-          <Route path="/bom" element={<BOM />} />
-          <Route path="/production" element={<Production />} />
           <Route path="/products" element={<Products />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/pos" element={<POS />} />
+          <Route path="/reports" element={<Reports />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
