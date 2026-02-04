@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -28,6 +28,7 @@ import {
   Cell
 } from 'recharts';
 import { Download, Calendar, Filter, FileText, TrendingUp, Package, Truck, ChefHat, ShoppingCart } from 'lucide-react';
+import { showSuccess } from '@/utils/toast';
 
 const Reports = () => {
   const [activeTab, setActiveTab] = useState("sales");
@@ -41,10 +42,14 @@ const Reports = () => {
     { name: 'Sun', sales: 3490 },
   ];
 
+  const handleExport = () => {
+    showSuccess("Generating PDF report... Download will start shortly.");
+  };
+
   return (
-    <div className="min-h-screen bg-orange-50/30">
-      <Navbar />
-      <main className="max-w-[1600px] mx-auto px-4 py-8">
+    <div className="min-h-screen bg-orange-50/30 lg:pl-72">
+      <Sidebar />
+      <main className="max-w-[1600px] mx-auto px-4 py-8 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Consolidated ERP Reports</h1>
@@ -54,8 +59,8 @@ const Reports = () => {
             <Button variant="outline" className="rounded-xl border-orange-200 text-orange-700">
               <Calendar className="mr-2 h-4 w-4" /> Date Range
             </Button>
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-xl">
-              <Download className="mr-2 h-4 w-4" /> Export All Reports
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-xl" onClick={handleExport}>
+              <Download className="mr-2 h-4 w-4" /> Export All Reports (PDF)
             </Button>
           </div>
         </div>

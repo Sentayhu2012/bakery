@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,9 +76,9 @@ const Settings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-orange-50/30">
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-orange-50/30 lg:pl-72">
+      <Sidebar />
+      <main className="max-w-7xl mx-auto px-4 py-8 lg:px-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">System Settings</h1>
           <p className="text-gray-500">Manage users, roles, and system-wide configurations.</p>

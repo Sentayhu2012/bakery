@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, Warehouse, Truck, ChefHat, UtensilsCrossed, 
   Package, ArrowRightLeft, ShoppingCart, BarChart3, Settings, 
-  LogOut, Menu, X, BookOpen, History
+  LogOut, Menu, BookOpen, History
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from "@/components/ui/button";
@@ -95,12 +95,12 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Desktop Sidebar */}
+      {/* Desktop Sidebar - Persistent */}
       <aside className="hidden lg:flex flex-col w-72 fixed inset-y-0 z-50">
         <NavContent />
       </aside>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Header & Toggle */}
       <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-orange-100 flex items-center px-4 z-40">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
