@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,8 +34,8 @@ const Production = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-orange-50/30">
-      <Navbar />
+    <div className="min-h-screen bg-orange-50/30 lg:pl-72">
+      <Sidebar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Production Portal</h1>
@@ -70,7 +70,7 @@ const Production = () => {
                     <div className="space-y-2">
                       <Label htmlFor="quantity" className="text-gray-700 font-medium">Quantity Produced</Label>
                       <Input 
-                        id="quantity"
+                        id="quantity" 
                         type="number" 
                         placeholder="e.g. 24" 
                         className="border-orange-100 focus-visible:ring-orange-500 rounded-xl"
